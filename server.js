@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose')
 const app = express();
 const PORT = process.env.PORT || 3020;
-const Cat = mongoose.model('Cat', { name: String });
+const User = mongoose.model('User', { name: String });
 
 mongoose.connect(
   process.env.MONGODB_URI || 'mongodb://localhost/test',
@@ -15,7 +15,7 @@ mongoose.connect(
 );
 
 app.post('/test', (req, res) => {
-  const kitty = new Cat({ name: 'Zildjian' });
+  const kitty = new User({ name: 'Zildjian' });
   kitty.save().then(() => console.log('meow'));
   res.send("Saved!!!!")
 })
