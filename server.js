@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3020;
+const PORT = process.env.PORT || 3020;
 
 app.use(express.static('./client/dist')); // Host your dist folder up to the server
 app.use(express.json()); // Alternative to BodyParser
