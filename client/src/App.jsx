@@ -1,8 +1,9 @@
 import React from 'react';
+const axios = require('axios');
 
 const App = () => {
     return (
-        <div onClick={() => {fetch('/test').then((data) => {console.log(data)})}}>
+        <div onClick={() => {axios.get('/test').then((data) => {console.log(data)})}}>
             Hello World!
         </div>
     );
