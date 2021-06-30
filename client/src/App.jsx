@@ -2,7 +2,7 @@ import React from 'react';
 
 const App = () => {
     return (
-        <div>
+        <div onClick={() => {fetch('/test').then((data) => {console.log(data)})}}>
             Hello World!
         </div>
     );

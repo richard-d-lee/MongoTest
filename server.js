@@ -13,6 +13,13 @@ mongoose.connect(
   },
 );
 
+app.get('/test', (req, res) => {
+  const Cat = mongoose.model('Cat', { name: String });
+  const kitty = new Cat({ name: 'Zildjian' });
+  kitty.save().then(() => console.log('meow'));
+  res.send("Saved!!!!")
+})
+
 app.use(express.static('./client/dist')); // Host your dist folder up to the server
 app.use(express.json()); // Alternative to BodyParser
 
