@@ -14,7 +14,7 @@ mongoose.connect(
   },
 );
 
-app.get('/test', (req, res) => {
+app.post('/test', (req, res) => {
   const kitty = new Cat({ name: 'Zildjian' });
   kitty.save().then(() => console.log('meow'));
   res.send("Saved!!!!")
