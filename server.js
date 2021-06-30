@@ -2,6 +2,16 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3020;
 
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  },
+);
+
 app.use(express.static('./client/dist')); // Host your dist folder up to the server
 app.use(express.json()); // Alternative to BodyParser
 
